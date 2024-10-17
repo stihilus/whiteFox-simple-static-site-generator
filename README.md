@@ -26,6 +26,7 @@ white-fox/
 ├── build.js         # Main build script
 ├── package.json     # Project configuration
 ├── style.css        # Main stylesheet
+├── .gitignore       # Git ignore file
 └── README.md        # Project documentation
 ```
 
