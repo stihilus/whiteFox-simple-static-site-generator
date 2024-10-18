@@ -44,6 +44,15 @@ async function buildHtmlPage(content, title) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} - My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta property="og:title" content="${title} - My Portfolio">
+    <meta property="og:description" content="Check out my portfolio and projects">
+    <meta property="og:image" content="images/shareImage.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title} - My Portfolio">
+    <meta name="twitter:description" content="Check out my portfolio and projects">
+    <meta name="twitter:image" content="images/shareImage.jpg">
 </head>
 <body>
     <header id="header">${header}</header>
