@@ -2,6 +2,8 @@
 
 White Fox is a lightweight, Node.js-based static site generator that transforms Markdown files into beautifully crafted HTML pages. It's designed for simplicity and ease of use, making content creation and management a breeze.
 
+Check in action : https://www.lomz.net/index.html
+
 ## 🚀 Features
 
 - **Markdown to HTML Conversion**: Effortlessly turn your Markdown content into polished web pages
