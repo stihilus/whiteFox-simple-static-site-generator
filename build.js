@@ -19,6 +19,14 @@ function convertHorizontalLines(content) {
     return content.replace(hrRegex, '<hr class="custom-hr">');
 }
 
+// Function to convert p5.js editor links to embed code
+function convertP5jsEmbeds(content) {
+    const p5jsRegex = /{{p5js:([a-zA-Z0-9_/-]+)}}/g;
+    return content.replace(p5jsRegex, (match, sketchId) => {
+        return `<div class="p5js-container"><iframe src="https://editor.p5js.org/${sketchId}" frameborder="0" allowfullscreen></iframe></div>`;
+    });
+}
+
 // Function to read and convert markdown to HTML
 async function convertMarkdownToHtml(filePath) {
     const markdown = await fs.readFile(filePath, 'utf-8');
@@ -26,6 +34,8 @@ async function convertMarkdownToHtml(filePath) {
     let htmlContent = marked.parse(markdown);
     // Then, convert YouTube links in the HTML
     htmlContent = convertYouTubeLinks(htmlContent);
+    // Convert p5.js embeds
+    htmlContent = convertP5jsEmbeds(htmlContent);
     // Finally, convert custom horizontal line syntax
     htmlContent = convertHorizontalLines(htmlContent);
     return htmlContent;
@@ -42,16 +52,16 @@ async function buildHtmlPage(content, title) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title} - My Portfolio</title>
+    <title>Lomz - ${title}</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <meta property="og:title" content="${title} - My Portfolio">
-    <meta property="og:description" content="Check out my portfolio and projects">
+    <meta property="og:title" content="Lomz - ${title}">
+    <meta property="og:description" content="Lomz a explorer in the fields of product design, NFTs, multimedia art, electronics, and music.">
     <meta property="og:image" content="images/shareImage.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${title} - My Portfolio">
-    <meta name="twitter:description" content="Check out my portfolio and projects">
+    <meta name="twitter:title" content="Lomz - ${title}">
+    <meta name="twitter:description" content="Lomz a explorer in the fields of product design, NFTs, multimedia art, electronics, and music.">
     <meta name="twitter:image" content="images/shareImage.jpg">
 </head>
 <body>
