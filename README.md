@@ -68,6 +68,7 @@ White Fox supports standard Markdown syntax. Here are some examples:
 - Code blocks: Use triple backticks (```) before and after your code
 - YouTube Embeds: Use the `{{youtube:VIDEO_ID}}` format to embed YouTube videos
 - Horizontal Rule: Use `{{hr}}` for a horizontal line
+- Iframe from p5js editor use: `{{p5js:username/mode/sketchId}}`. Example: `{{p5js:lomz/full/mE9bzGTmp}}` get this in p5js editor: File > Share and then you will see.
 
 For more advanced Markdown features, refer to the [GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/).
 
